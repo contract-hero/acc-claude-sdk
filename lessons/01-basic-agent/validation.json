@@ -1,0 +1,39 @@
+{
+  "ran_at": "2026-09-07T21:39:46.057Z",
+  "exit_code": 0,
+  "chapters_passed": 3,
+  "total_chapters": 3,
+  "e2e": {
+    "mode": "live",
+    "gate": "ACC_E2E_LIVE=1 (maintainer's own Claude login)",
+    "result": "passed",
+    "tests": "15 passed (15), e2e included"
+  },
+  "harness": "ACC v0.3 MCP tools driven in-process (selectLesson -> nextChapter -> verifyChapter x3 -> final gate) against a workspace seeded from reference-app minus solution_files; the learner sub-agent never read reference-app/",
+  "chapters": [
+    {
+      "id": "c01-run-query",
+      "verified_at": "2026-09-07T15:15:53.793Z",
+      "gate_calls": 1,
+      "artifact": "artifacts/01-c01-run-query.html"
+    },
+    {
+      "id": "c02-custom-tool",
+      "verified_at": "2026-09-07T15:19:16.148Z",
+      "gate_calls": 1,
+      "artifact": "artifacts/02-c02-custom-tool.html"
+    },
+    {
+      "id": "c03-cli",
+      "verified_at": "2026-09-07T15:21:27.472Z",
+      "gate_calls": 1,
+      "artifact": "artifacts/03-c03-cli.html"
+    }
+  ],
+  "transcript_excerpt": "RUN  v5.0.0 /Users/valrov/.acc/workspaces/01-basic-agent\n\n\n Test Files  4 passed (4)\n      Tests  15 passed (15)\n   Start at  23:39:35\n   Duration  10.28s (tests 92%, import 6%, transform 2%)",
+  "known_issues": [
+    "The first final-gate run (2026-09-07T15:21:54Z) failed because the maintainer's Claude session limit was hit; the SDK surfaced it as a success result with is_error=true and runAgent raised AgentError('api_error'). The gate was re-run at 21:39Z and passed. Environmental, not a lesson defect.",
+    "The same session limit interrupted the learner sub-agent after the gate, so the summary artifact was written by the maintainer following skills/chapter-artifact/references/conventions.md, and the sub-agent's friction log was not captured.",
+    "Per-chapter implementation attempt counts were not captured; state history shows each chapter passing on its first verifyChapter call."
+  ]
+}

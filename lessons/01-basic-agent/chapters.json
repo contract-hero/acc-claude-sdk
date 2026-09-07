@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "chapters": [
+    {
+      "id": "c01-run-query",
+      "title": "Run a query and read the result",
+      "brief_md": "chapters/01-run-query.md",
+      "key_idea": "query() returns an async iterable of typed messages; the `result` message is the contract.",
+      "expected_files": ["src/agent.ts"],
+      "tests": ["tests/01-run-query.test.ts"],
+      "verification": { "mode": "test-suite", "command": "pnpm vitest run tests/01-run-query.test.ts" }
+    },
+    {
+      "id": "c02-custom-tool",
+      "title": "Give the agent a custom in-process tool",
+      "brief_md": "chapters/02-custom-tool.md",
+      "key_idea": "A custom tool is a Zod shape plus an async handler, served in-process by createSdkMcpServer() and addressed as mcp__<server>__<tool>.",
+      "expected_files": ["src/tools.ts"],
+      "tests": ["tests/02-custom-tool.test.ts"],
+      "verification": { "mode": "test-suite", "command": "pnpm vitest run tests/02-custom-tool.test.ts" }
+    },
+    {
+      "id": "c03-cli",
+      "title": "Wrap it in a tiny CLI",
+      "brief_md": "chapters/03-cli.md",
+      "key_idea": "Inject query() and the output streams so the CLI is testable offline; the result message drives the summary line.",
+      "expected_files": ["src/cli.ts"],
+      "tests": ["tests/03-cli.test.ts"],
+      "verification": { "mode": "test-suite", "command": "pnpm vitest run tests/03-cli.test.ts" }
+    }
+  ],
+  "final_verification": { "mode": "test-suite", "command": "pnpm vitest run" }
+}

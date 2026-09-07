@@ -1,0 +1,25 @@
+{
+  "name": "acc-basic-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ACC lesson 01: your first agent with the Claude Agent SDK (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "agent": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.263",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  }
+}

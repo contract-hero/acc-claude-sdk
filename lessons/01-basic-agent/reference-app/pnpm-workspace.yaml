@@ -1,0 +1,4 @@
+# pnpm settings for this app. pnpm 10+ reads them here, not from package.json.
+# esbuild (used by tsx and vitest) needs its install script to place the native binary.
+allowBuilds:
+  esbuild: true

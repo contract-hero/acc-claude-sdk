@@ -1,0 +1,16 @@
+{
+  "slug": "01-basic-agent",
+  "title": "Your first agent with the Claude Agent SDK",
+  "summary": "Build a minimal TypeScript agent on the Claude Code harness: one query() call, a custom in-process tool, and a tiny CLI, with tests that define each step.",
+  "prerequisites": ["node-22-installed", "pnpm-installed"],
+  "docs": "docs/",
+  "workspace": {
+    "host": "reference-app",
+    "host_install_command": "pnpm install",
+    "verification_cwd": ".",
+    "solution_files": ["src/agent.ts", "src/tools.ts", "src/cli.ts"],
+    "files": []
+  },
+  "personalization_options": [],
+  "personalization_ranges": {}
+}

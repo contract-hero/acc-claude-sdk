@@ -1,0 +1,15 @@
+{
+  "name": "acc-claude-sdk",
+  "version": "0.1.0",
+  "description": "ACC course plugin teaching the Claude Agent SDK (TypeScript): build agents on the Claude Code harness, from a first query() to custom tools.",
+  "author": { "name": "Alvaro Lillo" },
+  "keywords": ["claude", "agent-sdk", "agents", "typescript", "course"],
+  "commands": ["./commands/start.md"],
+  "accContent": {
+    "lessons": "./lessons/",
+    "probes": [
+      { "id": "node-22-installed", "kind": "shell-exit-zero", "message_pass": "Node.js 22+ is installed.", "message_fail": "Node.js 22 or newer is required. Install it from https://nodejs.org and re-run.", "params": { "command": "node", "args": ["--version"], "timeout_ms": 10000, "expected_stdout_regex": "^v(2[2-9]|[3-9][0-9])\\." } },
+      { "id": "pnpm-installed", "kind": "shell-exit-zero", "message_pass": "pnpm is installed.", "message_fail": "pnpm not found on PATH. Run: corepack enable && corepack prepare pnpm@latest --activate", "params": { "command": "pnpm", "args": ["--version"], "timeout_ms": 10000 } }
+    ]
+  }
+}
